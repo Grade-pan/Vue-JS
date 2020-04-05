@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="Java中的经典算法之选择排序（SelectionSort） 神话丿小王子的博客主页 a)&amp;#160;原理：每一趟从待排序的记录中选出最小的元素，顺序放在已排好序的序列最后，直到全部记录排序完毕。也就" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Java中的经典算法之选择排序（SelectionSort） - SiberiaDante - 博客园</title>
+
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=bY1L8C4sDM5eS-FBZ53dCHGUGiTPogsnScmdZ88QTfs" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=PmkwnHGlf-RuRgKFYfQEo9WQ2Xbw9tk93Y8PKAYrIUQ" />
+
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shen-hua/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shen-hua/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shen-hua/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=SgdTKxVzCMJOCTBYF4EdhGrs_bYIa0aK2cI4ZVdWRzg"></script>
+    <script>
+        var currentBlogId = 281430;
+        var currentBlogApp = 'shen-hua';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+    </script>
+
+
+
+</head>
+<body>
+    <a name="top"></a>
+
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/shen-hua/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>
+
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/shen-hua/">SiberiaDante</a>
+</h1>
+<h2>
+今天你学习了吗
+</h2>
+
+
+
+
+
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/shen-hua/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/SiberiaDante">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/shen-hua/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+
+			<span id="stats_post_count">随笔 -
+85&nbsp; </span>
+<span id="stats_article_count">文章 -
+0&nbsp; </span>
+<span id="stats-comment_count">评论 -
+76</span>
+
+
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/shen-hua/p/5424059.html">Java中的经典算法之选择排序（SelectionSort）</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p style="margin-left: 60px; text-align: center;"><span style="font-size: 14pt;"><strong>Java中的经典算法之选择排序（SelectionSort）</strong></span></p>
+<p style="margin-left: 60px; text-align: center;"><span style="font-size: 14px;"><a href="http://www.cnblogs.com/shen-hua/" target="_blank">神话丿小王子的博客主页</a></span></p>
+<p style="margin-left: 60px;">a)&nbsp;原理：每一趟从待排序的记录中选出最小的元素，顺序放在已排好序的序列最后，直到全部记录排序完毕。也就是：每一趟在<span style="font-family: Calibri;">n-i+1(i=1</span><span style="font-family: 宋体;">，</span><span style="font-family: Calibri;">2</span><span style="font-family: 宋体;">，</span><span style="font-family: Calibri;">&hellip;n-1)</span><span style="font-family: 宋体;">个记录中选取关键字最小的记录作为有序序列中第</span><span style="font-family: Calibri;">i</span><span style="font-family: 宋体;">个记录。基于此思想的算法主要有</span><span style="color: #000000;"><a href="http://baike.so.com/doc/5992150-6205119.html"><span style="color: #000000;">简单选择排序</span></a>、树型选择排序和<a href="http://baike.so.com/doc/1008529-1066354.html"><span style="color: #000000;">堆排序</span></a>。</span>（这里只介绍常用的简单选择排序）</p>
+<p style="margin-left: 60px;">b)&nbsp;简单选择排序的基本思想：给定数组：int[]&nbsp;arr={<span style="font-family: 宋体;">里面</span><span style="font-family: Calibri;">n</span><span style="font-family: 宋体;">个数据</span><span style="font-family: Calibri;">}</span><span style="font-family: 宋体;">；</span>第<span style="font-family: Calibri;">1</span><span style="font-family: 宋体;">趟</span>排序，在待排序数据arr[1]~arr[n]<span style="font-family: 宋体;">中选出最小的</span>数据，将它与arrr[1]<span style="font-family: 宋体;">交换</span>；第<span style="font-family: Calibri;">2</span><span style="font-family: 宋体;">趟，在待排序</span>数据arr[2]~arr[n]<span style="font-family: 宋体;">中选出最小的</span>数据，将它与<span style="font-family: Calibri;">r[2]</span><span style="font-family: 宋体;">交换</span>；以此类推，第<span style="font-family: Calibri;">i</span><span style="font-family: 宋体;">趟在待排序</span>数据arr[i]~arr[n]<span style="font-family: 宋体;">中选出最小的</span>数据，将它与<span style="font-family: Calibri;">r[i]</span><span style="font-family: 宋体;">交换</span>，直到全部排序完成。</p>
+<p style="margin-left: 60px;">c)&nbsp;举例：数组&nbsp;int[]&nbsp;arr={5,2,8,4,9,1};</p>
+<p style="margin-left: 60px;">-------------------------------------------------------</p>
+<p style="margin-left: 60px;">第一趟排序： 原始数据：<span style="font-family: Calibri;">5&nbsp;&nbsp;2&nbsp;&nbsp;8&nbsp;&nbsp;4&nbsp;&nbsp;9&nbsp;&nbsp;1</span></p>
+<p style="margin-left: 60px;">最小数据<span style="font-family: Calibri;">1</span><span style="font-family: 宋体;">，把</span><span style="font-family: Calibri;">1</span><span style="font-family: 宋体;">放在首位，也就是</span><span style="font-family: Calibri;">1</span><span style="font-family: 宋体;">和</span><span style="font-family: Calibri;">5</span><span style="font-family: 宋体;">互换位置，</span></p>
+<p style="margin-left: 60px;">排序结果：<span style="font-family: Calibri;">1&nbsp;&nbsp;2&nbsp;&nbsp;8&nbsp;&nbsp;4&nbsp;&nbsp;9&nbsp;&nbsp;5</span></p>
+<p style="margin-left: 60px;"><span style="font-family: Calibri;">-------------------------------------------------------</span></p>
+<p style="margin-left: 60px;">第二趟排序：</p>
+<p style="margin-left: 60px;">第<span style="font-family: Calibri;">1</span><span style="font-family: 宋体;">以外的数据</span><span style="font-family: Calibri;">{2&nbsp;&nbsp;8&nbsp;&nbsp;4&nbsp;&nbsp;9&nbsp;&nbsp;5}</span><span style="font-family: 宋体;">进行比较，</span><span style="font-family: Calibri;">2</span><span style="font-family: 宋体;">最小，</span></p>
+<p style="margin-left: 60px;">排序结果：<span style="font-family: Calibri;">1&nbsp;&nbsp;2&nbsp;&nbsp;8&nbsp;&nbsp;4&nbsp;&nbsp;9&nbsp;&nbsp;5</span></p>
+<p style="margin-left: 60px;"><span style="font-family: Calibri;">-------------------------------------------------------</span></p>
+<p style="margin-left: 60px;">第三趟排序：</p>
+<p style="margin-left: 60px;">除<span style="font-family: Calibri;">1</span><span style="font-family: 宋体;">、</span><span style="font-family: Calibri;">2</span><span style="font-family: 宋体;">以外的数据</span><span style="font-family: Calibri;">{8&nbsp;&nbsp;4&nbsp;&nbsp;9&nbsp;&nbsp;5}</span><span style="font-family: 宋体;">进行比较，</span><span style="font-family: Calibri;">4</span><span style="font-family: 宋体;">最小，</span><span style="font-family: Calibri;">8</span><span style="font-family: 宋体;">和</span><span style="font-family: Calibri;">4</span><span style="font-family: 宋体;">交换</span></p>
+<p style="margin-left: 60px;">排序结果：<span style="font-family: Calibri;">1&nbsp;&nbsp;2&nbsp;&nbsp;4&nbsp;&nbsp;8&nbsp;&nbsp;9&nbsp;&nbsp;5</span></p>
+<p style="margin-left: 60px;"><span style="font-family: Calibri;">-------------------------------------------------------</span></p>
+<p style="margin-left: 60px;">第四趟排序：</p>
+<p style="margin-left: 60px;">除第<span style="font-family: Calibri;">1</span><span style="font-family: 宋体;">、</span><span style="font-family: Calibri;">2</span><span style="font-family: 宋体;">、</span><span style="font-family: Calibri;">4</span><span style="font-family: 宋体;">以外的其他数据</span><span style="font-family: Calibri;">{8&nbsp;&nbsp;9&nbsp;&nbsp;5}</span><span style="font-family: 宋体;">进行比较，</span><span style="font-family: Calibri;">5</span><span style="font-family: 宋体;">最小，</span><span style="font-family: Calibri;">8</span><span style="font-family: 宋体;">和</span><span style="font-family: Calibri;">5</span><span style="font-family: 宋体;">交换</span></p>
+<p style="margin-left: 60px;">排序结果：<span style="font-family: Calibri;">1&nbsp;&nbsp;2&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;9&nbsp;&nbsp;8</span></p>
+<p style="margin-left: 60px;"><span style="font-family: Calibri;">-------------------------------------------------------</span></p>
+<p style="margin-left: 60px;">第五趟排序：</p>
+<p style="margin-left: 60px;">除第<span style="font-family: Calibri;">1</span><span style="font-family: 宋体;">、</span><span style="font-family: Calibri;">2</span><span style="font-family: 宋体;">、</span><span style="font-family: Calibri;">4</span><span style="font-family: 宋体;">、</span><span style="font-family: Calibri;">5</span><span style="font-family: 宋体;">以外的其他数据</span><span style="font-family: Calibri;">{9&nbsp;&nbsp;8}</span><span style="font-family: 宋体;">进行比较，</span><span style="font-family: Calibri;">8</span><span style="font-family: 宋体;">最小，</span><span style="font-family: Calibri;">8</span><span style="font-family: 宋体;">和</span><span style="font-family: Calibri;">9</span><span style="font-family: 宋体;">交换</span></p>
+<p style="margin-left: 60px;">排序结果：<span style="font-family: Calibri;">1&nbsp;&nbsp;2&nbsp;&nbsp;4&nbsp;&nbsp;5&nbsp;&nbsp;8&nbsp;&nbsp;9</span></p>
+<p style="margin-left: 60px;"><span style="font-family: Calibri;">-------------------------------------------------------</span></p>
+<p style="margin-left: 60px;">注：每一趟排序获得最小数的方法：<span style="font-family: Calibri;">for</span><span style="font-family: 宋体;">循环进行比较，定义一个第三个变量</span><span style="font-family: Calibri;">temp</span><span style="font-family: 宋体;">，首先前两个数比较，把较小的数放在</span><span style="font-family: Calibri;">temp</span><span style="font-family: 宋体;">中，然后用</span><span style="font-family: Calibri;">temp</span><span style="font-family: 宋体;">再去跟剩下的数据比较，如果出现比</span><span style="font-family: Calibri;">temp</span><span style="font-family: 宋体;">小的数据，就用它代替</span><span style="font-family: Calibri;">temp</span><span style="font-family: 宋体;">中原有的数据。具体参照后面的代码示例，相信你在学排序之前已经学过</span><span style="font-family: Calibri;">for</span><span style="font-family: 宋体;">循环语句了，这样的话，这里理解起来就特别容易了。</span></p>
+<p>&nbsp;</p>
+<p style="margin-left: 60px;">代码示例：</p>
+<div class="cnblogs_code" style="margin-left: 60px;">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">选择排序</span>
+<span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> SelectionSort {
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> main(String[] args) {
+        </span><span style="color: #0000ff;">int</span>[] arr={<span style="color: #800080;">1</span>,<span style="color: #800080;">3</span>,<span style="color: #800080;">2</span>,<span style="color: #800080;">45</span>,<span style="color: #800080;">65</span>,<span style="color: #800080;">33</span>,<span style="color: #800080;">12</span><span style="color: #000000;">};
+        System.</span><span style="color: #0000ff;">out</span>.println(<span style="color: #800000;">"</span><span style="color: #800000;">交换之前：</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span><span style="color: #000000;"> num:arr){
+            System.</span><span style="color: #0000ff;">out</span>.print(num+<span style="color: #800000;">"</span> <span style="color: #800000;">"</span><span style="color: #000000;">);
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">选择排序的优化</span>
+        <span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> i = <span style="color: #800080;">0</span>; i &lt; arr.length - <span style="color: #800080;">1</span>; i++) {<span style="color: #008000;">//</span><span style="color: #008000;"> 做第i趟排序</span>
+            <span style="color: #0000ff;">int</span> k =<span style="color: #000000;"> i;
+            </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span> j = k + <span style="color: #800080;">1</span>; j &lt; arr.length; j++){<span style="color: #008000;">//</span><span style="color: #008000;"> 选最小的记录</span>
+                <span style="color: #0000ff;">if</span>(arr[j] &lt;<span style="color: #000000;"> arr[k]){
+                    k </span>= j; <span style="color: #008000;">//</span><span style="color: #008000;">记下目前找到的最小值所在的位置</span>
+<span style="color: #000000;">                }
+            }
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">在内层循环结束，也就是找到本轮循环的最小的数以后，再进行交换</span>
+            <span style="color: #0000ff;">if</span>(i != k){  <span style="color: #008000;">//</span><span style="color: #008000;">交换a[i]和a[k]</span>
+                <span style="color: #0000ff;">int</span> temp =<span style="color: #000000;"> arr[i];
+                arr[i] </span>=<span style="color: #000000;"> arr[k];
+                arr[k] </span>=<span style="color: #000000;"> temp;
+            }
+        }
+        System.</span><span style="color: #0000ff;">out</span><span style="color: #000000;">.println();
+        System.</span><span style="color: #0000ff;">out</span>.println(<span style="color: #800000;">"</span><span style="color: #800000;">交换后：</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+        </span><span style="color: #0000ff;">for</span>(<span style="color: #0000ff;">int</span><span style="color: #000000;"> num:arr){
+            System.</span><span style="color: #0000ff;">out</span>.print(num+<span style="color: #800000;">"</span> <span style="color: #800000;">"</span><span style="color: #000000;">);
+        }
+    }
+
+}</span></pre>
+</div>
+<p style="margin-left: 60px;">运行结果截图：</p>
+<p style="margin-left: 60px;">&nbsp;<a href="http://www.cnblogs.com/shen-hua/" target="_blank"><img src="https://images2015.cnblogs.com/blog/942621/201604/942621-20160423101222085-1257907987.png" alt="" /></a></p>
+<p style="margin-left: 60px;"><span style="line-height: 1.5;">选择排序的时间复杂度：简单选择排序的比较次数与序列的初始排序无关。&nbsp;假设待排序的序列有&nbsp;N&nbsp;个元素，则比较次数永远都是N&nbsp;(N&nbsp;-&nbsp;1)&nbsp;/&nbsp;2。而移动次数与序列的初始排序有关。当序列正序时，移动次数最少，为&nbsp;0。当序列反序时，移动次数最多，为3N&nbsp;(N&nbsp;-&nbsp;1)&nbsp;/&nbsp;&nbsp;2。</span></p>
+<p style="margin-left: 60px;">所以，综上，简单排序的时间复杂度为&nbsp;O<sub>(N<sup>2</sup>)</sub>。</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @
+<span id="post-date">2016-04-23 10:16</span>&nbsp;
+<a href="https://www.cnblogs.com/shen-hua/">SiberiaDante</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=5424059" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(5424059);return false;">收藏</a></div>
+        </div>
+
+
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 281430, cb_blogApp = 'shen-hua', cb_blogUserGuid = 'de27f7e7-6a08-e611-9fc1-ac853d9f53cc';
+    var cb_entryId = 5424059, cb_entryCreatedDate = '2016-04-23 10:16', cb_postType = 1;
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 SiberiaDante
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+
+</body>
