@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>js读取与写入文件_www.jquerycn.cn</title>
+</head>
+<body>
+<script type="text/javascript">
+    var fso, f1, ts, con, s, all;
+    var ForReading = 1;
+    //声明操作文件的对象
+    fso = new ActiveXObject("Scripting.FileSystemObject");
+    ts = fso.OpenTextFile("E:/发帖子文件/合并后的/复件 f9.txt", ForReading);
+    //读取前2000个字符
+    s = ts.read(2000);
+    //把换行转换成<br/>
+    con = s.replace(/\n/g, '<br/>');
+    //读取所有的内容
+    all = ts.ReadAll();
+    //从所有的内容中减去,刚才读取的
+    all = all.replace(con, '');
+    //输出来
+    document.write(con);
+    //关闭
+    ts.Close();
+    //如果没有创建,有就打开
+    tf = fso.CreateTextFile("E:/发帖子文件/合并后的/复件 f9.txt", true);
+    //把字符重新写入文件
+    tf.Write(all);
+    //关闭
+    tf.Close();
+</script>
+</body>
+</html>
